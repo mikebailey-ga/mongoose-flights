@@ -5,22 +5,28 @@
 <div>Flight Number: <%= flight.flightNo %></div>
 <div>Departs: <%= flight.departs %></div>
 <div>Airport: <%= flight.airport %></div>
-<div>Destination Airport: <%= %></div>
+<div>Destination Airport: <%= flight.destinations %></div>
 <div>Arrival Date: <%= flight.destinations %></div>
 <h2>Destination</h2>
 <form action="/flights/<%= flight.id %>" method="POST">
     <label>Airport
-        <select name="airport">
+        <select name="airportDest">
             <option value="AUS">AUS</option>
             <option value="DAL">DAL</option>
             <option value="LAX">LAX</option>
             <option value="SEA">SEA</option>
         </select>
     </label>
+
+    
+
     <label>Date
-        <input type="datetime-local" name="date">
+        <input type="date" name="arrival">
     </label>
     <input type="submit" value="Update Destination">
 </form>
+
+<a href="/flights/<%= flight.id %>/tickets/new">New Ticket</a>
+
 
 <%- include('../partials/footer') %>

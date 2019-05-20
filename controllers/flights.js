@@ -28,16 +28,16 @@ function index(req,res){
 
 function show(req, res){
     Flight.findById(req.params.id, function(err, flight){
-        res.render('flights/show', {flight});       
+        res.render('flights/show', {flight}); 
     });
 }
 
 function destination(req, res){
     Flight.findById(req.params.id, function(err, flight){
-        flight.destinations.push(req.params.id);
+        
+        flight.destinations.push(req.body);
         flight.save(function(err){
             res.redirect(`/flights/${flight.id}`);
         });
-
     });
 }

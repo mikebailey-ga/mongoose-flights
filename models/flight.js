@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var destinationSchema = new Schema({
-    airport: {type: String, enum: ['AUS','DAL','LAX','SEA']},
+    airportDest: {type: String, enum: ['AUS','DAL','LAX','SEA']},
     arrival: {type: Date, default: function(){
         return new Date();
     }}
