@@ -13,5 +13,9 @@ function newTicket(req, res){
 }
 
 function create(req,res){
-
+    var ticket = new Ticket(req.body);
+    ticket.save(function(err){
+        if (err) return res.render('flights/');
+        res.redirect(`/flights/`);
+    });
 }

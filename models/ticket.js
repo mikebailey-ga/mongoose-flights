@@ -6,7 +6,7 @@ var ticketSchema = new Schema({
         //A1 THRU F99
     }},
     price: {type: Number, min: 0},
-    flight: Number
+    flight: [{type: Schema.Types.ObjectId, ref: 'Flight'}]
 });
 
 module.exports = mongoose.model('Ticket', ticketSchema);

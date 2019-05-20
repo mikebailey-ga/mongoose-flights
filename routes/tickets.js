@@ -4,9 +4,9 @@ var router = express.Router();
 var ticketsController = require('../controllers/tickets');
 
 
-router.get('/tickets/new', ticketsController.new);
+router.get('/flights/:id/tickets/new', ticketsController.new);
 
-router.post('/tickets/', ticketsController.create);
+router.post('/flights/:id/tickets/', ticketsController.create);
 
 
 module.exports = router;
