@@ -5,9 +5,10 @@
 <div>Flight Number: <%= flight.flightNo %></div>
 <div>Departs: <%= flight.departs %></div>
 <div>Airport: <%= flight.airport %></div>
-<div>Destination Airport: <%= flight.destinations %></div>
-<div>Arrival Date: <%= flight.destinations %></div>
-
+<% flight.destinations.forEach(function(d) { %>
+<div>Destination Airport: <%= d.airport %></div>
+<div>Arrival Date: <%= d.arrival %></div>
+<% }); %>
 
 <h2>Tickets</h2>
 <table>
@@ -26,7 +27,7 @@
 <%});%>
     </tbody>
     </table>
-    
+
 <h2>Destination</h2>
 <form action="/flights/<%= flight.id %>" method="POST">
     <label>Airport
